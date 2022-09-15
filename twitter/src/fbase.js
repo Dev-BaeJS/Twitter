@@ -1,6 +1,5 @@
 import firebase from "firebase/compat/app";
-import "firebase/auth"; // 없어도 됨
-import { getAuth } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, GithubAuthProvider , signInWithPopup} from "firebase/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -12,4 +11,8 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+
+export const SignInWithPopup = signInWithPopup;
+export const googleAuthProvider = GoogleAuthProvider;
+export const githubAuthProvider = GithubAuthProvider;
 export const authService = getAuth();
